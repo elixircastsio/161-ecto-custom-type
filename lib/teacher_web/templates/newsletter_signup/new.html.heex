@@ -1,0 +1,16 @@
+<div>
+  <span><.link href={Routes.album_path(@conn, :index)}>View albums</.link></span>
+  <h1>Newsletter Subscription</h1>
+  <div>
+  <.form let={f}
+    action={Routes.newsletter_signup_path(@conn, :create)}
+    for={@changeset}
+    >
+    <%= text_input f, :email, placeholder: "Email" %>
+    <%= error_tag f, :email %>
+    <div>
+      <%= submit "Submit" %>
+    </div>
+  </.form>
+  </div>
+</div>
